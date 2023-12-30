@@ -43,6 +43,7 @@ function getUserDataFromToken(req) {
 }
 
 //////////////////////// APIs //////////////////////////////////
+app.get('/',(req,res)=>res.send('Server Running'))
 app.get('/test', (req, res) => {
     res.json('test ok');
 });
