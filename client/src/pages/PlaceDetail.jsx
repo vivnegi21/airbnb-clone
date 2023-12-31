@@ -42,7 +42,7 @@ const PlaceDetail = () => {
             }}>
               {
                 data.photos.map((photo, id) => (
-                  <img src={'http://localhost:4000/uploads/' + photo} alt="" className='object-cover' />))
+                  <img src={'https://airbnb-clone-api-h193.onrender.com/uploads/' + photo} alt="" className='object-cover' />))
               }
             </div>
           </div>
@@ -62,13 +62,13 @@ const PlaceDetail = () => {
         <div className='relative'>
           <div className='md:grid md:grid-cols-2 gap-2 rounded-2xl overflow-hidden'>
             <div className=''>
-              <img src={'http://localhost:4000/uploads/' + data?.photos?.[0]} alt="img" className='aspect-auto object-cover ' />
+              <img src={'https://airbnb-clone-api-h193.onrender.com/uploads/' + data?.photos?.[0]} alt="img" className='aspect-auto object-cover ' />
             </div>
             <div className='max-md:hidden grid grid-cols-2 gap-1'>
-              <img src={'http://localhost:4000/uploads/' + data?.photos?.[1]} alt="img" className='aspect-auto object-cover' />
-              <img src={'http://localhost:4000/uploads/' + data?.photos?.[2]} alt="img" className='aspect-auto object-cover ' />
-              <img src={'http://localhost:4000/uploads/' + data?.photos?.[3]} alt="img" className='aspect-auto object-cover' />
-              <img src={'http://localhost:4000/uploads/' + data?.photos?.[4]} alt="img" className='aspect-auto object-cover' />
+              <img src={'https://airbnb-clone-api-h193.onrender.com/uploads/' + data?.photos?.[1]} alt="img" className='aspect-auto object-cover' />
+              <img src={'https://airbnb-clone-api-h193.onrender.com/uploads/' + data?.photos?.[2]} alt="img" className='aspect-auto object-cover ' />
+              <img src={'https://airbnb-clone-api-h193.onrender.com/uploads/' + data?.photos?.[3]} alt="img" className='aspect-auto object-cover' />
+              <img src={'https://airbnb-clone-api-h193.onrender.com/uploads/' + data?.photos?.[4]} alt="img" className='aspect-auto object-cover' />
             </div>
 
           </div>
