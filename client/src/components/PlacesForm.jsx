@@ -133,7 +133,7 @@ const PlacesForm = () => {
                 <div className='mt-2 grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-2'>
                     {addedPhotos.length > 0 && addedPhotos.map((photo, id) => (
                         <div className='relative flex h-32 hover:scale-[200%]  hover:ease-in duration-500 hover:z-10 delay-200' key={id}>
-                            <img src={'http://localhost:4000/uploads/' + photo} alt="id" key={id} className='rounded-2xl object-cover ' />
+                            <img src={'https://airbnb-clone-api-h193.onrender.com/uploads/' + photo} alt="id" key={id} className='rounded-2xl object-cover ' />
                             <div className='absolute bottom-1 right-1 cursor-pointer' onClick={() => removePhoto(photo)}>
                                 <img src={trashIcon} alt="delete" className='h-6 w-6 bg-white bg-opacity-50 rounded-xl' />
                             </div>

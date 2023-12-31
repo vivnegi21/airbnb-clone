@@ -22,7 +22,7 @@ const PlaceCard = ({ key, data, editable=false}) => {
                     transform: `translateX(-${slide * 100}%)`
                 }}>
                     {data.photos.map((photo, id) => (
-                        <img src={'http://localhost:4000/uploads/' + photo} alt="img" className='object-cover aspect-square' key={id} />
+                        <img src={'https://airbnb-clone-api-h193.onrender.com/uploads/' + photo} alt="img" className='object-cover aspect-square' key={id} />
 
                     ))}
                 </div>

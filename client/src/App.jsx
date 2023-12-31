@@ -15,7 +15,7 @@ import Profile from './pages/Profile.jsx'
 import PlaceDetail from './pages/PlaceDetail.jsx'
 import Booking from './pages/Booking.jsx'
 
-axios.defaults.baseURL = 'http://localhost:4000'
+axios.defaults.baseURL = 'https://airbnb-clone-api-h193.onrender.com/'
 //to get cookies in api through frontend
 axios.defaults.withCredentials = true;
 const App = () => {
