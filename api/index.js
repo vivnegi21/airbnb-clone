@@ -27,7 +27,7 @@ app.use('/uploads', express.static(__dirname + '/uploads'));
 //for cors 
 app.use(cors({
     credentials: true,
-    origin: "https://airbnb-clone-vivnegi21.vercel.app/",
+    origin: "https://airbnb-clone-vivnegi21.vercel.app",
 
 
 }));
