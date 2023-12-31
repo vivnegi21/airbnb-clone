@@ -44,7 +44,7 @@ function getUserDataFromToken(req) {
 }
 
 //////////////////////// APIs //////////////////////////////////
-app.get('/',(req,res)=>res.send('Server Running'))
+app.get('/', (req, res) => res.send('Server Running'))
 app.get('/test', (req, res) => {
     res.json('test ok');
 });
@@ -63,25 +63,23 @@ app.post('/register', async (req, res) => {
     }
 
 })
-app.post('/login', (req, res) => {
-    const { email, password } = req.body;
-    try {
-        const user = User.findOne({ email }).then((user) => {
-            if (!user) {
-                return res.status(401).json("Email or Password is incorrect");
-            }
-            const validPassword = bcrypt.compareSync(password, user.password);
-            if (!validPassword) {
-                return res.status(401).send('Email or password is incorrect').end();
-            }
 
-            let token = jwt.sign({ id: user._id, email: email }, process.env.SECRET, { expiresIn: '7days' }, (err, token) => {
-                if (err) throw err;
-                res.cookie('token', token, { maxAge: 3000000000 }).json(user);
+app.post('/login', async (req, res) => {
+    const { email, password } = req.body;
+    const userDoc = await User.findOne({email});
+    if(userDoc){
+        const passOk = bcrypt.compareSync(password,userDoc.password);
+        if(passOk){
+            jwt.sign({
+                email:userDoc.email,
+                id:userDoc._id,
+            },process.env.SECRET,{},(err,token)=>{
+                if(err) throw err;
+                res.cookie('token',token).json(userDoc);
             });
-        })
-    } catch (error) {
-        console.log(error);
+        }else{
+            res.status(422).json('pass not ok');
+        }
     }
 });
 
