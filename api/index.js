@@ -26,10 +26,9 @@ app.use('/uploads', express.static(__dirname + '/uploads'));
 
 //for cors 
 app.use(cors({
-    credentials: true,
     origin: "https://airbnb-clone-vivnegi21.vercel.app",
-
-
+    methods:['GET','POST','PUT','DELETE'],
+    credentials: true,
 }));
 
 mongoose.connect(process.env.MONGO_URL);
@@ -75,7 +74,11 @@ app.post('/login', async (req, res) => {
                 id:userDoc._id,
             },process.env.SECRET,{},(err,token)=>{
                 if(err) throw err;
-                res.cookie('token',token).json(userDoc);
+                res.cookie('token',token,{
+                    maxAge:10*60*60*1000,
+                    sameSite:"none",
+                    secure:true,
+                }).json(userDoc);
             });
         }else{
             res.status(422).json('pass not ok');

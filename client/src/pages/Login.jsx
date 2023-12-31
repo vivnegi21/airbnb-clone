@@ -20,7 +20,7 @@ const Login = () => {
             const userInfo = await axios.post('/login',{
                 email,
                 password
-            },{withCredentials:true,credentials: 'include'});
+            },{withCredentials:true});
             setUser(userInfo.data);
             navigate('/');
         } catch (error) {
