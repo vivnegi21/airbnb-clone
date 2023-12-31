@@ -13,7 +13,7 @@ const Booking = () => {
             {booking.length > 0 && booking.map((book) => (
                 <div key={book._id} className='mb-4 flex flex-col sm:flex-row gap-2 bg-gray-200 rounded-lg overflow-hidden max-w-2xl mx-auto'>
                     <div className='max-w-2xl sm:w-48'>
-                        <img src={'http://localhost:4000/uploads/' + book.place?.photos?.[0]} alt="" />
+                        <img src={'https://airbnb-clone-api-h193.onrender.com/uploads/' + book.place?.photos?.[0]} alt="" />
                     </div>
                     <div className='py-3 pr-3 grow px-2 '>
                         <h1 className='text-xl'>{book.place.title}</h1>
